@@ -9,7 +9,9 @@
     "frontend": "webpack -d --watch",
     "backend": "nodemon server.js",
     "start": "npm run build && NODE_ENV=production node server.js",
-    "test": "mocha --compilers js:babel-core/register ./test/**/*.js --require ignore-styles"
+    "test": "mocha --compilers js:babel-core/register ./test/**/*.js --require ignore-styles",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -34,7 +36,8 @@
     "redux-devtools-log-monitor": "^1.3.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "webpack": "^2.3.3"
+    "webpack": "^2.3.3",
+    "snyk": "^1.83.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.2",
@@ -51,5 +54,6 @@
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.2",
     "webpack-hot-middleware": "^2.18.0"
-  }
+  },
+  "snyk": true
 }
